@@ -274,7 +274,12 @@ void main(){
 }
 
 
+
+
+
+
 //arquivo CheckBox
+
 import 'package:flutter/material.dart';
 
 
@@ -286,7 +291,11 @@ class CheckBox extends StatefulWidget {
 }
 
 class _CheckBoxState extends State<CheckBox> {
+
+
   bool _comidabrasileira = false;
+  bool _comidaJaponesa = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -302,6 +311,17 @@ class _CheckBoxState extends State<CheckBox> {
               onChanged: (bool? valor){
                 setState((){
                   _comidabrasileira = valor!;
+                });
+              }
+
+          ),
+          CheckboxListTile(
+              value:_comidaJaponesa,
+              title: Text("Comida Japonesa"),
+              subtitle: Text("A melhor comida"),
+              onChanged: (bool? valor){
+                setState((){
+                  _comidaJaponesa = valor!;
                 });
               }
 
