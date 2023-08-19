@@ -336,6 +336,26 @@ class _CheckBoxState extends State<CheckBox> {
 ======Gasolina e etanol====================================
 
 
+//main dart
+
+import 'package:flutter/material.dart';
+import 'CampoTexto.dart';
+import 'CampoTexto.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: CampoTexto(),
+  )); //MaterialApp
+}
+
+
+
+
+
+
+//função
+
 import 'package:flutter/material.dart';
 
 
