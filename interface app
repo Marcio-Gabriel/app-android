@@ -183,4 +183,131 @@ class _HomeState extends State<Home> {
   }
 }
 =============================================================
+================Caixa de texto==========================
 
+import 'package:flutter/material.dart'; //arquivo main
+import 'CampoTexto.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: CampoTexto(),
+  )); //MaterialApp
+}
+
+
+
+
+
+
+
+//arquivo CampoTexto
+
+import 'package:flutter/material.dart';
+
+
+class CampoTexto extends StatefulWidget {
+  const CampoTexto({Key? key}) : super(key: key);
+
+  @override
+  State<CampoTexto> createState() => _CampoTextoState();
+}
+
+class _CampoTextoState extends State<CampoTexto> {
+
+  TextEditingController _campotexto = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Entrada de Dados"),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(30),
+            child: TextField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: "Digite um valor"
+              ),
+                maxLength: 5,
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.red
+              ),
+              controller: _campotexto,
+            ),
+          ),
+          ElevatedButton(
+              onPressed:(){
+                print("Digitado: " + _campotexto.text);
+              },
+              child: Text("Salvar")
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+//Arquivo main
+
+import 'package:flutter/material.dart';
+import 'CheckBox.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: CheckBox(),
+  )); //MaterialApp
+}
+
+
+//arquivo CheckBox
+import 'package:flutter/material.dart';
+
+
+class CheckBox extends StatefulWidget {
+  const CheckBox({Key? key}) : super(key: key);
+
+  @override
+  State<CheckBox> createState() => _CheckBoxState();
+}
+
+class _CheckBoxState extends State<CheckBox> {
+  bool _comidabrasileira = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("CheckBox"),
+      ),
+      body: Column(
+        children: [
+          CheckboxListTile(
+              value: _comidabrasileira,
+              title: Text("Camida Brasileira"),
+              subtitle: Text("A melhor comida"),
+              onChanged: (bool? valor){
+                setState((){
+                  _comidabrasileira = valor!;
+                });
+              }
+
+          )
+        ],
+      ),
+    );
+  }
+}
